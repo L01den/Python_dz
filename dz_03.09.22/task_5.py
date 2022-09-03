@@ -4,3 +4,14 @@
 
 # - A (3,6); B (2,1) -> 5,09
 # - A (7,-5); B (1,-1) -> 7,21
+
+import math
+
+
+a_x = int(input('Введите A_х: '))
+a_y = int(input('Введите A_y: '))
+
+b_x = int(input('Введите B_х: '))
+b_y = int(input('Введите B_y: '))
+
+print(f'Расстояние между точками {round(math.sqrt((b_x - a_x) ** 2 + (b_y - a_y) ** 2), 3)}')
