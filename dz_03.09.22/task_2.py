@@ -8,3 +8,5 @@ if (not (x or y or z)) == (not x and not y and not z):
     print('Утверждение истинно')
 else:
     print('Выражение ложно')
+
+
