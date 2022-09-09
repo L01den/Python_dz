@@ -7,7 +7,7 @@ sum = 0
 i = 0
 while i < len(num):
     match num[i]:
-        case '0' | '.':
+        case '0' | '.' | '-':
             i += 1
         case _:
             sum += int(num[i])
