@@ -12,6 +12,6 @@ while i < len(num):
         case _:
             sum += int(num[i])
             i += 1
-print(sum, len(num))  
+print(f'Сумма = {sum}')  
 
 
