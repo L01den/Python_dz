@@ -48,3 +48,32 @@ my_list = []
 for j in range(1, n):
     my_list.append(fibonacci(j))
 print(my_list)
+
+
+
+
+
+
+
+def fibonacci(n):
+    if n in [1, 2]:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+n = int(input('Введите число '))
+normal_fib = []
+negariv_fib = []
+
+for j in range(1, n + 1):
+    if j % 2 == 0:
+        negariv_fib.append(fibonacci(j) * -1)
+    else:    
+        negariv_fib.append(fibonacci(j))
+negariv_fib.reverse()
+    
+for j in range(1, n + 1):
+    normal_fib.append(fibonacci(j))
+    
+print(normal_fib)
+print(negariv_fib)
