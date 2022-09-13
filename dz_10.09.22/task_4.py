@@ -12,4 +12,5 @@ def binary_number(number):
     bin_num = str_num[::-1]
     return bin_num
 
-print(binary_number(23))
+num = int(input('Введите число: '))
+print(binary_number(num))
