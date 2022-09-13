@@ -33,3 +33,18 @@ fib2 = 1
 n = int(input('Введите число '))
 
 fibonacci(fib1, fib2)
+
+
+
+
+def fibonacci(n):
+    if n in [1, 2]:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+n = int(input('Введите число '))
+my_list = []
+for j in range(1, n):
+    my_list.append(fibonacci(j))
+print(my_list)
