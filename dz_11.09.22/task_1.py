@@ -1,9 +1,29 @@
-Задание 1
+# Задание 1
 import math
 
 n = int(input('Введите желаемое количество знаков после заптятой '))
 print(str(math.pi)[:n+2])
 
+# Задание 2
+
+n = int(input('Введите число '))
+
+num_list = []
+i = 2
+value = n
+while i < value:
+    if n % 2 == 0:
+        num_list.append(2)
+        n /= 2
+        i += 1
+    elif n % i == 0:
+        num_list.append(i)
+        n /= i
+        i += 1
+    else:
+        i += 1
+
+print(num_list)
 
 
 
