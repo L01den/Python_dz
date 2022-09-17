@@ -9,9 +9,4 @@ with open('Homeworke/dz_11.09.22/example_2.txt', 'r') as e_2:
 
 answer = f'{e1_list} + {e2_list}'
 
-
-print(''.join([word for word in answer if 'x' not in word]))
-
-
-
-# print(type(answer))
+print(answer)
