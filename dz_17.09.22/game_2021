@@ -14,25 +14,28 @@
 
 
 
-def check(count):
-    temp = False
-    while temp == False:
-        if (count > 0) and (count < 29):
-            return count
-            temp = True
-        else:
-            count = int(input(('Введите число от 1 до 28'))     
 
-    
-    
+# def check(count):
+#     temp = False
+#     while temp == False:
+#         if (count > 0) and (count < 29):
+#             return count
+#             temp = True
+#         else:
+#             count = int(input(('Введите число от 1 до 28'))     
 
-# candy = 2021
-# while candy > 0:
-#     if candy > 0:
-#         player_1 = int(input('Ход первого игрока '))
-#         candy -= player_1
-#     if candy > 0:
-#         player_2 = int(input('Ход второго игрока '))
-#         candy -= player_2
-player_1 = int(input('Ход первого игрока '))
-print(check(player_1))
+name_1 = input('Введите имя первого игрока: ')
+name_2 = input('Введите имя второго игрока: ') 
+
+candy = 2021
+while candy > 0:
+    if candy > 0:
+        player_1 = int(input(f'Ходит {name_1}: '))
+        candy -= player_1
+        name = name_1
+    if candy > 0:
+        player_2 = int(input(f'Ходит {name_2}: '))
+        candy -= player_2
+        name = name_2
+        
+print(f'Победитель {name}!!!')
