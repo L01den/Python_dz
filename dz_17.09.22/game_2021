@@ -12,20 +12,11 @@
 #     (Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?)
     
 
+name_1 = 'игрок 1'
+name_2 = 'игрок 2'
 
-
-
-# def check(count):
-#     temp = False
-#     while temp == False:
-#         if (count > 0) and (count < 29):
-#             return count
-#             temp = True
-#         else:
-#             count = int(input(('Введите число от 1 до 28'))     
-
-name_1 = input('Введите имя первого игрока: ')
-name_2 = input('Введите имя второго игрока: ') 
+# name_1 = input('Введите имя первого игрока: ')
+# name_2 = input('Введите имя второго игрока: ') 
 
 candy = 2021
 while candy > 0:
