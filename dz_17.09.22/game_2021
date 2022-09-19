@@ -1,4 +1,3 @@
-
 # 2. Создайте программу для игры с конфетами человек против человека.
     
 #     Условие задачи: На столе лежит 2021 конфета. 
@@ -14,3 +13,27 @@
     
 
 
+def check(count):
+    temp = False
+    while temp == False:
+        if count > 0 and count < 29:
+            temp = True
+        else: 
+            temp = False
+            count = int(input(('Введите число от 1 до 28'))
+    print(count)
+    
+    
+
+# candy = 2021
+# while candy > 0:
+#     if candy > 0:
+#         player_1 = int(input('Ход первого игрока '))
+#         candy -= player_1
+#     if candy > 0:
+#         player_2 = int(input('Ход второго игрока '))
+#         candy -= player_2
+
+
+player_1 = int(input('Ход первого игрока '))
+print(check(player_1))
