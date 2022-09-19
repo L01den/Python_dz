@@ -11,6 +11,16 @@
 #     b) Подумайте как наделить бота "интеллектом"
 #     (Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?)
     
+def check(count):
+    temp = False
+    while temp == False:
+        if (count > 0) and (count < 29):
+            return count
+            temp = True      
+        else:
+            value = int(input(('Введите число от 1 до 28: '))
+            count = value
+
 
 name_1 = 'игрок 1'
 name_2 = 'игрок 2'
