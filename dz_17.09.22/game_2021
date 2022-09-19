@@ -13,15 +13,16 @@
     
 
 
+
 def check(count):
     temp = False
     while temp == False:
-        if count > 0 and count < 29:
+        if (count > 0) and (count < 29):
+            return count
             temp = True
-        else: 
-            temp = False
-            count = int(input(('Введите число от 1 до 28'))
-    print(count)
+        else:
+            count = int(input(('Введите число от 1 до 28'))     
+
     
     
 
@@ -33,7 +34,5 @@ def check(count):
 #     if candy > 0:
 #         player_2 = int(input('Ход второго игрока '))
 #         candy -= player_2
-
-
 player_1 = int(input('Ход первого игрока '))
 print(check(player_1))
