@@ -1,13 +1,18 @@
 import random 
 
-def check(count) -> int:  
-    temp = False
-    while temp == False:
-            if (count > 0) and (count < 29):
-                return count
-                temp = True
+def check(count, name) -> int: 
+    while True:
+        count = input(f'Ходит {name}: ')
+        try:
+            if (int(count) > 0) and (int(count) < 29):
+                return int(count)
+                break
             else:
-                count = int(input(('Введите число от 1 до 28: ')))
+                raise ValueError
+        except (ValueError, TypeError):
+            print('Дурак введи число от 1 до 28')
+        
+
 
 # def game(candy, player, name):
 #     player = int(input(f'Ходит {name}: '))
@@ -21,13 +26,13 @@ name_2 = 'Бот'
 player_1 = 0
 # name_1 = input('Введите имя игрока: ')                      
 
-# lot = random.randint(1, 2)
+lot = random.randint(0, 1)
 
-candy = 2021
+
+candy = 100
 while candy > 0:
     if candy > 0:
-        player_1 = int(input(f'Ходит {name_1}: '))
-        candy -= check(player_1)
+        candy -= check(player_1, name_1)
         name = name_1
     if candy > 0:
         player_2 = random.randint(1, 28)
