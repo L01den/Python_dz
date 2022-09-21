@@ -25,12 +25,20 @@ def rle_unpacking(input_str) -> str:
         j += 2
     return output_str
 
-my_str = 'aaaffffcc'
-mystr = 'a3f4c2'
 
-print(rle_compression(my_str))
-print(rle_unpacking(mystr))
+with open('Homeworke/dz_17.09.22/input_str.txt', 'r') as in_str:
+    for line in in_str.readlines():
+        with open('Homeworke/dz_17.09.22/output_str.txt', 'w') as on_str:
+            on_str.write(rle_compression(line))
+    
+with open('Homeworke/dz_17.09.22/output_str.txt', 'r') as on_str:
+    for line in on_str.readlines():
+        with open('Homeworke/dz_17.09.22/input_str2.txt', 'w') as in_str2:
+            in_str2.write(rle_unpacking(line))
 
+
+   
+        
 
 
 
