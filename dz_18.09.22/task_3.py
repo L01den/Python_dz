@@ -1,18 +1,9 @@
 # Задайте список из нескольких чисел. Напишите программу,
 # которая найдёт сумму элементов списка, стоящих на нечётной позиции.
 # Пример:
-# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
-
-# def summa(enty_list):
-#     i = 1
-#     sum = 0
-#     while i < len(my_list):
-#         sum += int(my_list[i])
-#         i += 2
-#     return sum
+# - [2, 3, 5, 9, 3, 1] -> на нечётных позициях элементы 3 и 9 и 1 ответ: 13
 
 my_list = [2, 3, 5, 9, 3, 1]
 
-
-new_list = [my_list[i] for i in my_list if i  2 == 0]  # решение в 3 строки
-print(new_list)
+summa = [sum(my_list[i] for i in range(len(my_list)) if i % 2 == 1)] 
+print(summa)
