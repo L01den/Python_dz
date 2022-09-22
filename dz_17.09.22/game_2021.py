@@ -22,34 +22,49 @@ def error_checking(count, name) -> int:
             else:
                 raise ValueError
         except (ValueError, TypeError):
-            print('Дурак введи число от 1 до 28: ')
+            print('Дурак введи число от 1 до 28')
+        
 
+flag = input('Начать игру против бота, нажмите +. Или нажмите -')
 
-name_1 = input('Введите имя первого игрока: ')                       
-name_2 = input('Введите имя второго игрока: ')   
+name_1 = input('Введите имя игрока: ')
+if flag == '+': name_2 = 'Бот' 
+else: name_2 = input('Введите имя второго игрока: ')  
 player_1 = 0
 player_2 = 0
-candy = 100
-lot = random.randint(1, 2)
+candy = 2021                    
 
-
+lot = random.randint(0, 1)
 if lot == 1:
     while candy > 0:
         if candy > 0:
             candy -= error_checking(player_1, name_1)
             name = name_1
         if candy > 0:
-            candy -= error_checking(player_2, name_2)
-            name = name_2
+            if flag == '+':     
+                player_2 = random.randint(1, 28)
+                print(f'Ходит бот: {player_2}')
+                candy -= player_2
+                name = name_2
+            else:
+                candy -= error_checking(player_2, name_2)
+                name = name_2
 else:
     while candy > 0:
         if candy > 0:
-            candy -= error_checking(player_2, name_2)
-            name = name_2
+            if flag == '+':     
+                player_2 = random.randint(1, 28)
+                print(f'Ходит бот: {player_2}')
+                candy -= player_2
+                name = name_2
+            else:
+                candy -= error_checking(player_2, name_2)
+                name = name_2
         if candy > 0:
             candy -= error_checking(player_1, name_1)
             name = name_1
+
+
         
 print(f'Победитель {name}!!!')
-
 
