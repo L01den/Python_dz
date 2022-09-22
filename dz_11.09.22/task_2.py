@@ -15,9 +15,10 @@ while i < value:
         num_list.append(i)
         n /= i
         i += 1
+    elif (i == value - 1) and (len(num_list) == 0):
+        num_list.append(value)
     else:
         i += 1
-# доделать для простых чисел
 
 print(num_list)
 

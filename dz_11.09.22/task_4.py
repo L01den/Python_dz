@@ -29,5 +29,7 @@ random_factor(k)
 with open('Homeworke/dz_11.09.22/answer.txt', 'w') as an:
     an.write(' '.join(equality(k)))
 
+with open('Homeworke/dz_11.09.22/answer.txt', 'w') as an:
+    an.write(' '.join(equality(k)))
 
 
