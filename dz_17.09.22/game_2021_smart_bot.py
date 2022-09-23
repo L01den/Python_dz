@@ -31,11 +31,10 @@ while candy > 0:
         print(f'Ходит бот: {player_2}')
         candy -= player_2
         name = name_2
-    else:
+    elif candy > 0:
         player_2 = 21
         print(f'Ходит бот: {player_2}')
         candy -= player_2
         name = name_2
-
 
 print(f'Победитель {name}!!!')
