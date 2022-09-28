@@ -7,3 +7,5 @@ n = int(input('Введите число N: '))
 fact = lambda x: 1 if x == 0 else x * fact(x - 1)
 factorial = [fact(i) for i in (map(int, range(1, n+1)))]
 print(factorial)
+
+
