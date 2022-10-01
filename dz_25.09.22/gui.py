@@ -11,5 +11,5 @@ def get_phone_num():
     return input('Номер телефона: ')
 
 def action():
-    act = input('Выбирте действие: ')
+    act = int(input('Выбирте действие: '))
     return act
