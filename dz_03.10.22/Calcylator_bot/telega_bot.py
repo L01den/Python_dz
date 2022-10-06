@@ -23,7 +23,7 @@ async def cmd_start(message: types.Message):
 async def send_welcome(message: types.Message):
    await message.answer('''Привет! Я бот-недоматематик!
 Напиши мне простой пример, через пробел, и я его решу)))
-(Например:/hi 2 * 2)
+(Например: 2 * 2)
 Напишешь по другому я буду плакать и сломаюсь(((''')
 
 @dp.message_handler(lambda message: message.text == '???')
@@ -36,11 +36,11 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(commands=['help'])
 async def echo(message: types.Message): 
-   await message.answer('/hi\n /help\n /start')
+   await message.answer('/help\n /start')
 
-@dp.message_handler(commands=['hi']) 
+@dp.message_handler() 
 async def echo(message: types.Message): 
-   msg = message.text[3:]
+   msg = message.text  
    my_list = math_f.example(msg)
    a = int(my_list[0])
    operatorr = my_list[1]
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
 
 
-
+# Сдеалть обратотку ошибки ValueError
 
 
 
