@@ -9,7 +9,6 @@ API_TOKEN = '5656551956:AAGMqW9go5Ckj0eKGVd__UyIjAwpu3Q1Gkw'
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -24,7 +23,9 @@ async def send_welcome(message: types.Message):
    await message.answer('''Привет! Я бот-недоматематик!
 Напиши мне простой пример, через пробел, и я его решу)))
 (Например: 2 * 2)
-Напишешь по другому я буду плакать и сломаюсь(((''')
+Напишешь по другому я буду плакать и сломаюсь(((
+А ещё у меня есть 2 пасхалки найди если сможешь (￢‿￢ )''')
+
 
 @dp.message_handler(lambda message: message.text == '???')
 async def cmd_dice(message: types.Message):
@@ -36,7 +37,12 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(commands=['help'])
 async def echo(message: types.Message): 
-   await message.answer('/help\n /start')
+   await message.answer('/help\n/start\n/nice')
+
+@dp.message_handler(commands=['nice'])  # хендлер команды старт после получения сообщения вызывает функцию ниже
+async def bot_start(message: types.Message):  # Любая асинхронная функция
+    await bot.send_sticker(chat_id=message.from_user.id,
+                           sticker=r'CAACAgIAAxkBAAEGBwVjQXO6ZcpX5ZmTslhVi17doOu6dAACWQEAAhAabSIdlWw5X85AHyoE')
 
 @dp.message_handler() 
 async def echo(message: types.Message): 
@@ -58,9 +64,17 @@ if __name__ == '__main__':
 # Сдеалть обратотку ошибки ValueError
 
 
-
-
-
+# def error_checking(count, name) -> int: 
+#     while True:
+#         count = input(f'Ходит {name}: ')
+#         try:
+#             if (int(count) > 0) and (int(count) < 29):
+#                 return int(count)
+#                 break
+#             else:
+#                 raise ValueError
+#         except (ValueError, TypeError):
+#             print('Дурак введи число от 1 до 28')
 
 
 
