@@ -20,7 +20,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message_handler(Text(equals='Начать'))
 async def send_welcome(message: types.Message):
-   await message.answer('''Привет! Я бот-недоматематик!
+   await message.answer('''Привет! Я бот-недокалькулятор!
 Напиши мне простой пример, через пробел, и я его решу)))
 (Например: 2 * 2)
 Напишешь по другому я буду плакать и сломаюсь(((
@@ -39,49 +39,30 @@ async def send_welcome(message: types.Message):
 async def echo(message: types.Message): 
    await message.answer('/help\n/start\n/nice')
 
-@dp.message_handler(commands=['nice'])  # хендлер команды старт после получения сообщения вызывает функцию ниже
-async def bot_start(message: types.Message):  # Любая асинхронная функция
+@dp.message_handler(commands=['nice'])  
+async def bot_start(message: types.Message):  
     await bot.send_sticker(chat_id=message.from_user.id,
                            sticker=r'CAACAgIAAxkBAAEGBwVjQXO6ZcpX5ZmTslhVi17doOu6dAACWQEAAhAabSIdlWw5X85AHyoE')
 
+
 @dp.message_handler() 
 async def echo(message: types.Message): 
-   msg = message.text  
-   my_list = math_f.example(msg)
-   a = int(my_list[0])
-   operatorr = my_list[1]
-   b = int(my_list[2])
-   resaltt = math_f.do_it(a, b, operatorr)
-   db.log(f'{a} {operatorr} {b} = {resaltt}')
-   value = gui.view_data(a, b, operatorr, resaltt)
-   await message.answer(f'Ваш пример {value}')
+   try:
+      msg = message.text  
+      my_list = math_f.example(msg)
+      a = int(my_list[0])
+      operatorr = my_list[1]
+      b = int(my_list[2])
+      resaltt = math_f.do_it(a, b, operatorr)
+      db.log(f'{a} {operatorr} {b} = {resaltt}')
+      value = gui.view_data(a, b, operatorr, resaltt)
+      await message.answer(f'Ваш пример {value}')
+   except (Exception):
+         await message.answer('Я не понимаю тебя, напиши мне пример')
+   
 
 if __name__ == '__main__':
    executor.start_polling(dp, skip_updates=True)
-
-
-
-# Сдеалть обратотку ошибки ValueError
-
-
-# def error_checking(count, name) -> int: 
-#     while True:
-#         count = input(f'Ходит {name}: ')
-#         try:
-#             if (int(count) > 0) and (int(count) < 29):
-#                 return int(count)
-#                 break
-#             else:
-#                 raise ValueError
-#         except (ValueError, TypeError):
-#             print('Дурак введи число от 1 до 28')
-
-
-
-
-
-
-
 
 
 
